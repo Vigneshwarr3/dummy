@@ -5,7 +5,7 @@ def report_count(token):
 
         count = corpus.lower().split().count(token.lower())
 
-        print(f"The term [{token}] shows up in the corpus {count} times.")
+        print(f"The term {token} shows up in the corpus {count} times.")
     
     except FileNotFoundError:
         print("The corpus.txt file was not found.")
