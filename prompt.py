@@ -1,6 +1,11 @@
-from dummy import read_corpus, count_token_occurrences
-
 def report_count(token):
-    corpus = read_corpus(filepath)
-    count = count_token_occurrences(corpus, token)
-    print(f"The term [{token}] shows up in the corpus {count} times.")
+    try:
+        with open('corpus.txt', 'r') as file:
+            corpus = file.read()
+
+        count = corpus.lower().split().count(token.lower())
+
+        print(f"The term {token} shows up in the corpus {count} times.")
+    
+    except FileNotFoundError:
+        print("The corpus.txt file was not found.")
